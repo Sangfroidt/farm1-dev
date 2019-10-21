@@ -1,0 +1,78 @@
+{block content}
+
+	<!-- <h1 n:block="title">Hello World</h1> -->
+
+
+
+    <section name="intro" class="intro">
+        <h3>Urban Agriculture Directory</h3>
+        <h1 class="intro-filters">A growing directory of <span class="intro-filters-item"><span class="intro-filters-icon">≣</span>all jobs in urban agriculture</span> from <span class="intro-filters-item"><span class="intro-filters-icon">≣</span>around the world</span> sorted by <span class="intro-filters-item"><span class="intro-filters-icon">≣</span>date added</span>.</h1>
+    </section>
+
+    <section name="jobs" class="jobs">
+        <div n:foreach="$jobs as $job" class="jobs-item">
+            <img class="jobs-item-logo" src="img/companies/company-icon.png">
+            <div class="jobs-item-name"><a n:href="Job:show $job->job_id">{$job->job_name}</a></div>
+            <div class="jobs-item-location">The Company</div>
+            <div class="jobs-item-description">Full-time position in {$job->job_city}, {$job->job_country}</div>
+            <div class="jobs-item-link"><a href="">thecompany.com →</a></div>
+        </div>
+        <div class="jobs-item">
+            <img class="jobs-item-logo" src="img/companies/company-icon.png">
+            <div class="jobs-item-name"><a href="jobs/job.html">Hardware Engineer</a></div>
+            <div class="jobs-item-location">The Company</div>
+            <div class="jobs-item-description">Internship in Amsterdam, Netherlands</div>
+            <div class="jobs-item-link"><a href="">thecompany.com →</a></div>
+        </div>
+        <div class="jobs-item">
+            <img class="jobs-item-logo" src="img/companies/company-icon.png">
+            <div class="jobs-item-name"><a href="jobs/job.html">Farmer</a></div>
+            <div class="jobs-item-location">The Company</div>
+            <div class="jobs-item-description">Part-time position in Amsterdam, Netherlands</div>
+            <div class="jobs-item-link"><a href="">thecompany.com →</a></div>
+        </div>
+        <div class="jobs-item">
+            <img class="jobs-item-logo" src="img/companies/company-icon.png">
+            <div class="jobs-item-name"><a href="jobs/job.html">Sales Manager</a></div>
+            <div class="jobs-item-location">The Company</div>
+            <div class="jobs-item-description">Full-time position in Amsterdam, Netherlands</div>
+            <div class="jobs-item-link"><a href="">thecompany.com →</a></div>
+        </div>
+        <div class="jobs-item">
+            <img class="jobs-item-logo" src="img/companies/company-icon.png">
+            <div class="jobs-item-name"><a href="jobs/job.html">Hardware Engineer</a></div>
+            <div class="jobs-item-location">The Company</div>
+            <div class="jobs-item-description">Internship in Amsterdam, Netherlands</div>
+            <div class="jobs-item-link"><a href="">thecompany.com →</a></div>
+        </div>
+        <div class="jobs-item">
+            <img class="jobs-item-logo" src="img/companies/company-icon.png">
+            <div class="jobs-item-name"><a href="jobs/job.html">Farmer</a></div>
+            <div class="jobs-item-location">The Company</div>
+            <div class="jobs-item-description">Part-time position in Amsterdam, Netherlands</div>
+            <div class="jobs-item-link"><a href="">thecompany.com →</a></div>
+        </div>
+        <div class="jobs-item">
+            <img class="jobs-item-logo" src="img/companies/company-icon.png">
+            <div class="jobs-item-name"><a href="jobs/job.html">Sales Manager</a></div>
+            <div class="jobs-item-location">The Company</div>
+            <div class="jobs-item-description">Full-time position in Amsterdam, Netherlands</div>
+            <div class="jobs-item-link"><a href="">thecompany.com →</a></div>
+        </div>
+        <div class="jobs-more">
+            <a class="jobs-more-button" href="">↻ Load more jobs</a>
+        </div>
+    </section>
+
+
+	
+
+
+
+	
+
+	
+<a n:href="Dashboard:default">Dashboard</a>
+
+	
+{/block}

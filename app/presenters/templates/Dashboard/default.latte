@@ -1,0 +1,68 @@
+
+
+{block content}
+
+	<section name="dashboard" class="dashboard">
+    <div class="dashboard-company">
+      <h3 class="dashboard-company-title">Company profile</h3>
+      <div n:foreach="$companies as $company" class="dashboard-company-profile">
+        <img class="dashboard-company-profile-logo" src="../img/companies/company-icon.png">
+        <h2 class="dashboard-company-profile-name"><a n:href="Company:show $company->company_id">{$company->company_name}</a></h2>
+        <div class="dashboard-company-profile-status">Listed <span class="dashboard-jobs-item-status-active">●</span></div>
+        <div class="dashboard-company-profile-action"><a n:href="Company:edit $company->company_id">Edit</a></div>
+      </div>
+    </div>
+
+    <div class="dashboard-events">
+      <h3 class="dashboard-events-title">Published events</h3>
+      {if $events->count()>0}
+        <div n:foreach="$events as $event" class="dashboard-events-item">
+          <div class="dashboard-events-item-title"><a n:href="Event:show $event->event_id">{$event->event_name}</a></div>
+          <div class="dashboard-events-item-status">Published</div>
+          <div class="dashboard-events-item-action"><a n:href="Event:edit $event->event_id">Edit</a></div>
+        </div>
+      {else}
+        <p>You don't have any published events yet.</p>
+      {/if}
+      <div class="dashboard-events-item">
+        <div class="dashboard-events-item-add"><a n:href="Event:create">Add new event</a></div>
+      </div>
+    </div>
+
+    <div class="dashboard-jobs">
+      <h3 class="dashboard-jobs-title">Published jobs<h3>
+      {if $jobs->count()>0}
+        <div n:foreach="$jobs as $job" class="dashboard-jobs-item">
+          <div class="dashboard-jobs-item-title"><a n:href="Job:show $job->job_id">{$job->job_name}</a></div>
+          <div class="dashboard-jobs-item-status">Listed <span class="dashboard-jobs-item-status-active">●</span></div>
+          <div class="dashboard-jobs-item-action"><a n:href="Job:edit $job->job_id">Edit</a></div>
+        </div>
+      {else}
+        <p>You don't have any published jobs yet.</p>
+      {/if}
+      <div class="dashboard-jobs-item">
+        <div class="dashboard-jobs-item-add"><a n:href="Job:create">Add new job</a></div>
+      </div>
+    </div>
+
+    <div class="dashboard-account">
+      <h3 class="dashboard-account-title">Account</h3>
+      <div class="dashboard-account-settings">
+        <div class="dashboard-account-settings-twitter">
+          <img class="dashboard-account-settings-twitter-logo" src="../img/companies/company-icon.png">
+          <div class="dashboard-account-settings-twitter-name"><a href="">@{$user->getIdentity()->user_login}</a><span class="dashboard-account-settings-twitter-name-platform"> on Twitter</span></div>
+          <div class="dashbaord-account-settings-twitter-lastlogin"></div>
+        </div>
+        <div class="dashboard-account-settings-purchases">
+          <div class="dashboard-account-settings-purchases-title">Purchase history</div>
+          <div class="dashboard-account-settings-purchases-action"><a href="">View</a></div>
+        </div>
+        <div class="dashboard-account-settings-delete">
+          <div class="dashboard-account-settings-delete-title">Delete account</div>
+          <div class="dashboard-account-settings-delete-action"><a href="">Delete</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{/block}

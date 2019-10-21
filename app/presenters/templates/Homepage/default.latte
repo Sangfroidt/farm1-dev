@@ -1,0 +1,52 @@
+{block content}
+
+	<!-- <h1 n:block="title">Hello World</h1> -->
+
+	<section name="intro" class="intro">
+		<h3>Urban Agriculture Directory</h3>
+		<h1 class="intro-filters">A growing directory of <span class="intro-filters-item"><span class="intro-filters-icon">≣</span>all urban agriculture companies</span> from <span class="intro-filters-item"><span class="intro-filters-icon">≣</span>around the world</span> sorted by <span class="intro-filters-item"><span class="intro-filters-icon">≣</span>date added</span>.</h1>
+	</section>
+
+	<section name="companies" class="companies">
+		<div n:foreach="$companies as $company" class="companies-item">
+			<img class="companies-item-logo" src="img/companies/company-icon.png">
+			<div class="companies-item-name"><a n:href="Company:show $company->company_id">{$company->company_name}</a></div>
+			<div class="companies-item-location">{$company->company_city}, {$company->company_country}</div>
+			<div class="companies-item-description">We grow plants inside a warehouse</div>
+			<div class="companies-item-link"><a href="">thecompany.com →</a></div>
+		</div>
+		
+		<div class="companies-more">
+			<a class="companies-more-button" href="">↻ Load more companies</a>
+		</div>
+	</section>
+
+
+
+	
+
+	
+<a n:href="Dashboard:default">Dashboard</a>
+
+	<a n:href="Company:create">Add a company</a>
+
+	<div n:foreach="$companies as $company" class="company">
+		<h2><a n:href="Company:show $company->company_id">{$company->company_name}</a></h2>
+	</div>
+
+	<br>
+
+	<a n:href="Event:create">Add an event</a>
+
+	<div n:foreach="$events as $event" class="event">
+		<h2><a n:href="Event:show $event->event_id">{$event->event_name}</a></h2>
+	</div>
+
+	<br>
+
+	<a n:href="Job:create">Add a job</a>
+
+	<div n:foreach="$jobs as $job" class="job">
+		<h2><a n:href="Job:show $job->job_id">{$job->job_name}</a></h2>
+	</div>
+{/block}

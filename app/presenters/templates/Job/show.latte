@@ -1,0 +1,16 @@
+{block content}
+
+<p><a n:href="Homepage:default">Back to homepage</a></p>
+
+<div class="id">Job id: {$job->job_id}</div>
+
+
+<!-- n:block title upravuje hlavičku -->
+<h1 n:block="title">{$job->job_name}</h1>
+<p>{$job->job_city}</p>
+<p>{$job->job_country}</p>
+<p>{$job->job_website}</p>
+
+<!-- <a n:href="Job:edit $job->job_id">Edit job</a> -->
+<a n:href="Job:edit $job->job_id">Edit job</a>
+{/block}

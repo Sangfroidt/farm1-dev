@@ -1,0 +1,79 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Urban Agriculture Directory</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{$basePath}/css/style.css">
+	{block head}{/block}
+</head>
+
+<body>
+
+
+
+
+  <!-- Header -->
+	<header>
+        <div class="header-logo">UA.D</div>
+        <ul class="header-navigation">
+            <li class="header-navigation-item {ifCurrent Homepage:}header-navigation-item-active{/ifCurrent}"><a n:href="Homepage:">Companies</a></li>
+            <li class="header-navigation-item {ifCurrent Events:}header-navigation-item-active{/ifCurrent}"><a n:href="Events:">Events</a></li>
+            <li class="header-navigation-item {ifCurrent Jobs:}header-navigation-item-active{/ifCurrent}"><a n:href="Jobs:">Jobs</a></li>
+            <li class="header-navigation-item"><a href=""><svg class="header-navigation-item-search" viewBox="0 0 24 24"><path d="M10 1q1.828 0 3.496 0.715t2.871 1.918 1.918 2.871 0.715 3.496q0 1.57-0.512 3.008t-1.457 2.609l5.68 5.672q0.289 0.289 0.289 0.711 0 0.43-0.285 0.715t-0.715 0.285q-0.422 0-0.711-0.289l-5.672-5.68q-1.172 0.945-2.609 1.457t-3.008 0.512q-1.828 0-3.496-0.715t-2.871-1.918-1.918-2.871-0.715-3.496 0.715-3.496 1.918-2.871 2.871-1.918 3.496-0.715zM10 3q-1.422 0-2.719 0.555t-2.234 1.492-1.492 2.234-0.555 2.719 0.555 2.719 1.492 2.234 2.234 1.492 2.719 0.555 2.719-0.555 2.234-1.492 1.492-2.234 0.555-2.719-0.555-2.719-1.492-2.234-2.234-1.492-2.719-0.555z"></path></svg></a><li>
+         </ul>
+
+          {if $user->loggedIn}
+            <a n:href="Dashboard:" class="header-account">Dashboard</a>  
+          {else}
+            <a n:href="Sign:in" class="header-account">Join / Sign in</a>
+          {/if}
+        <!-- <a class="header-account" n:href="Sign:in">Join / Sign in</a> -->
+    </header>
+
+
+
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+
+
+
+  <!-- Content -->
+	{include content}
+
+
+  <!-- Footer -->
+  <footer>
+    <ul class="footer-navigation">
+      <li class="footer-navigation-item"><a href="">About</a></li>
+      <li class="footer-navigation-item"><a href="">Support</a></li>
+      <li class="footer-navigation-item"><a href="">Updates</a></li>
+      <li class="footer-navigation-item"><a href="">Contact</a></li>
+    </ul>
+    <p>All information / images copyright of their respective owners.</p>
+    <p><a href="">© Refarm.cz 2019.</a></p>
+  </footer>
+
+
+
+	{block scripts}
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+	<script src="{$basePath}/js/main.js"></script>
+	{/block}
+
+	<ul class="navig">
+	<p>Uživatel:</p>
+    {if $user->loggedIn}
+        <li><a n:href="Sign:out">Odhlásit</a></li>
+    {else}
+        <li><a n:href="Sign:in">Přihlásit</a></li>
+    {/if}
+</ul>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{block content}
+
+
+    <section name="company" class="company">
+        <div class="company-intro">
+            <img class="company-intro-logo" src="../img/companies/company-icon.png">
+            <h1 class="company-intro-name" n:block="title">{$company->company_name}</h1>
+            <div class="company-intro-location">{$company->company_city}, {$company->company_country}</div>
+        </div>
+        <div class="company-about">
+            <p class="company-about-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat est eu libero scelerisque, at bibendum risus hendrerit.</p>
+            <a class="company-about-link" href="">thecompany.com</a>
+            <a class="company-about-link" href="">@thecompany</a>
+        </div>
+        <div class="company-content">
+
+        </div>
+        <div class="company-events">
+            <h3 class="company-events-title">Organised events</h3>
+            <div class="company-events-item">
+                <div class="company-events-item-title"><a href="../events/event.html">Fresh workshop vol. 6</a></div>
+                <div class="company-events-item-location">Amsterdam, Netherlands</div>
+                <div class="company-events-item-time">
+                <div class="company-events-item-time-date">Jan 27th</div>
+                <div class="company-events-item-time-year">2019</div>
+                </div>
+            </div>
+            <div class="company-events-item">
+                <div class="company-events-item-title"><a href="../events/event.html">Fresh workshop vol. 7</a></div>
+                <div class="company-events-item-location">Amsterdam, Netherlands</div>
+                <div class="company-events-item-time">
+                <div class="company-events-item-time-date">Feb 23rd</div>
+                <div class="company-events-item-time-year">2019</div>
+                </div>
+            </div>
+            </div>
+            <div class="company-jobs">
+                <h3 class="company-jobs-title">Open job positions</h3>
+                <div class="company-jobs-item">
+                    <div class="company-jobs-item-title"><a href="">Front-end developer</a></div>
+                    <div class="company-jobs-item-location">Amsterdam, Netherlands</div>
+                    <div class="company-jobs-item-contract">Full-time</div>
+                </div>
+                <div class="company-jobs-item">
+                    <div class="company-jobs-item-title"><a href="">Community manager</a></div>
+                    <div class="company-jobs-item-location">Amsterdam, Netherlands</div>
+                    <div class="company-jobs-item-contract">Part-time</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+<p><a n:href="Homepage:default">Back to homepage</a></p>
+
+<div class="id">Company id: {$company->company_id}</div>
+
+
+<!-- n:block title upravuje hlavičku -->
+
+<p>{$company->company_city}</p>
+<p>{$company->company_country}</p>
+<p>{$company->company_website}</p>
+
+<!-- <a n:href="Company:edit $company->company_id">Edit company</a> -->
+<a n:href="Company:edit $company->company_id">Edit company</a>
+{/block}

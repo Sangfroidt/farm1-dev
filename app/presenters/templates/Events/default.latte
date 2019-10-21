@@ -1,0 +1,96 @@
+{block content}
+
+	<!-- <h1 n:block="title">Hello World</h1> -->
+
+	<section name="intro" class="intro">
+        <h3>Urban Agriculture Directory</h3>
+        <h1 class="intro-filters">A curated calendar of <span class="intro-filters-item"><span class="intro-filters-icon">≣</span>all urban agriculture events</span> from <span class="intro-filters-item"><span class="intro-filters-icon">≣</span>around the world</span> sorted by <span class="intro-filters-item"><span class="intro-filters-icon">≣</span>coming next</span>.</h1>
+    </section>
+
+    <section name="events" class="events">
+        <div class="events-time">
+        <div class="events-time-name">Tomorrow</div>
+        <div n:foreach="$events as $event" class="events-item">
+            <div class="events-item-date">
+                <div class="events-item-date-day">9th</div>
+                <div class="events-item-date-month">Jan</div>
+            </div>
+            <div class="events-item-name"><a n:href="Event:show $event->event_id">{$event->event_name}</a></div>
+            <div class="events-item-location">{$event->event_city}, {$event->event_country}</div>
+            <div class="events-item-description">We learn how to grow plants inside a warehouse</div>
+            <div class="events-item-link"><a href="">theagevent.com →</a></div>
+        </div>
+        <div class="events-item">
+            <div class="events-item-date">
+                <div class="events-item-date-day">9th</div>
+                <div class="events-item-date-month">Jan</div>
+            </div>
+            <div class="events-item-name"><a href="events/event.html">Yet another event</a></div>
+            <div class="events-item-location">Amsterdam, Netherlands</div>
+            <div class="events-item-description">We learn how to grow plants inside a warehouse</div>
+            <div class="events-item-link"><a href="">theagevent.com →</a></div>
+        </div>
+        </div>
+        <div class="events-time">
+        <div class="events-time-name">This week</div>
+        <div class="events-item">
+            <div class="events-item-date">
+                <div class="events-item-date-day">11th</div>
+                <div class="events-item-date-month">Jan</div>
+            </div>
+            <div class="events-item-name"><a href="events/event.html">Watch it grow</a></div>
+            <div class="events-item-location">Amsterdam, Netherlands</div>
+            <div class="events-item-description">We learn how to grow plants inside a warehouse</div>
+            <div class="events-item-link"><a href="">theagevent.com →</a></div>
+        </div>
+        <div class="events-item">
+            <div class="events-item-date">
+                <div class="events-item-date-day">14th</div>
+                <div class="events-item-date-month">Jan</div>
+            </div>
+            <div class="events-item-name"><a href="events/event.html">Plants are green</a></div>
+            <div class="events-item-location">Amsterdam, Netherlands</div>
+            <div class="events-item-description">We learn how to grow plants inside a warehouse</div>
+            <div class="events-item-link"><a href="">theagevent.com →</a></div>
+        </div>
+        </div>
+        <div class="events-time">
+        <div class="events-time-name">This month</div>
+        <div class="events-item">
+            <div class="events-item-date">
+                <div class="events-item-date-day">21st</div>
+                <div class="events-item-date-month">Jan</div>
+            </div>
+            <div class="events-item-name"><a href="events/event.html">A fresh workshop vol. 10</a></div>
+            <div class="events-item-location">Amsterdam, Netherlands</div>
+            <div class="events-item-description">We learn how to grow plants inside a warehouse</div>
+            <div class="events-item-link"><a href="">theagevent.com →</a></div>
+        </div>
+        <div class="events-item">
+            <div class="events-item-date">
+                <div class="events-item-date-day">24th</div>
+                <div class="events-item-date-month">Jan</div>
+            </div>
+            <div class="events-item-name"><a href="events/event.html">Hello plants</a></div>
+            <div class="events-item-location">Amsterdam, Netherlands</div>
+            <div class="events-item-description">We learn how to grow plants inside a warehouse</div>
+            <div class="events-item-link"><a href="">theagevent.com →</a></div>
+        </div>
+        </div>
+        <div class="events-more">
+        <a class="events-more-button" href="">↻ Load more events</a>
+        </div>
+    </section>
+
+
+	
+
+
+
+	
+
+	
+<a n:href="Dashboard:default">Dashboard</a>
+
+	
+{/block}
